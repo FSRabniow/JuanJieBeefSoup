@@ -1,3 +1,190 @@
-git remote add origin https://github.com/FSRabniow/JuanJieBeefSoup.git
-git branch -M main
-git push -u origin main
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>娟姐牛肉湯｜手機菜單</title>
+  <style>
+    :root{
+      --bg:#fff7d6;
+      --card:#ffffff;
+      --ink:#2b2118;
+      --muted:#7a6b55;
+      --accent:#9b2d20;
+      --accent2:#f2c14e;
+      --line:#ead9a6;
+      --shadow:0 10px 28px rgba(50,35,15,.12);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","Noto Sans JP","Segoe UI",sans-serif;
+      background:linear-gradient(180deg,#fff2b8 0%,#fff9e6 45%,#fff 100%);
+      color:var(--ink);
+      line-height:1.5;
+    }
+    header{
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:rgba(255,247,214,.94);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
+      padding:14px 16px 10px;
+    }
+    .brand{display:flex;align-items:center;gap:10px;justify-content:space-between}
+    h1{font-size:26px;margin:0;font-weight:900;letter-spacing:.05em}
+    .badge{background:var(--accent);color:#fff;border-radius:999px;padding:5px 10px;font-size:12px;font-weight:700;white-space:nowrap}
+    .info{font-size:13px;color:var(--muted);margin-top:6px}
+    .tabs{display:flex;gap:8px;overflow-x:auto;padding:12px 0 2px;scrollbar-width:none}
+    .tabs a{flex:0 0 auto;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 12px;font-size:14px;font-weight:700}
+    .hero{padding:18px 16px 10px}
+    .hero-card{background:var(--card);border-radius:22px;box-shadow:var(--shadow);padding:18px;border:1px solid #fff}
+    .hero-card p{margin:8px 0 0;color:var(--muted);font-size:14px}
+    .notice{background:#fff1c5;border:1px dashed #d1a537;border-radius:16px;padding:10px 12px;margin-top:12px;font-size:13px;color:#6b4b15}
+    main{padding:0 16px 100px}
+    section{margin:18px 0}
+    h2{font-size:20px;margin:0 0 10px;display:flex;align-items:center;gap:8px}
+    h2::before{content:"";width:7px;height:22px;background:var(--accent);border-radius:999px}
+    .grid{display:grid;gap:10px}
+    .item{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:13px 14px;box-shadow:0 4px 14px rgba(50,35,15,.06)}
+    .item-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .name{font-weight:800;font-size:16px}
+    .star{color:var(--accent);font-weight:900;margin-right:2px}
+    .price{text-align:right;white-space:nowrap;font-weight:900;color:var(--accent)}
+    .sub{font-size:12px;color:var(--muted);margin-top:2px}
+    .sizes{font-size:13px;color:var(--muted);font-weight:600}
+    .filters{display:flex;gap:8px;margin:10px 0 14px;flex-wrap:wrap}
+    button{border:0;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 11px;font-weight:800;color:var(--ink)}
+    button.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+    .bottom-bar{position:fixed;left:12px;right:12px;bottom:12px;background:rgba(43,33,24,.96);color:#fff;border-radius:22px;padding:12px;box-shadow:var(--shadow);display:flex;gap:10px;align-items:center;justify-content:space-between;z-index:20}
+    .bottom-bar a{color:#2b2118;background:#fff;border-radius:999px;padding:10px 13px;text-decoration:none;font-weight:900;font-size:14px;white-space:nowrap}
+    .bottom-text{font-size:13px;color:#fff3c7}
+    .tag{display:inline-block;background:#fff3c7;color:#7a4c00;border-radius:999px;padding:3px 8px;font-size:12px;font-weight:800;margin-left:6px}
+    footer{color:var(--muted);font-size:12px;text-align:center;margin-top:24px}
+    @media(min-width:720px){body{max-width:430px;margin:0 auto;border-left:1px solid #eee;border-right:1px solid #eee}.bottom-bar{max-width:406px;margin:0 auto}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <h1>娟姐牛肉湯</h1>
+      <span class="badge">外帶可</span>
+    </div>
+    <div class="info">台南市北區勝利路381號<br>營業時間：早上11:00－晚上09:00｜每週日、一公休</div>
+    <nav class="tabs" aria-label="菜單分類">
+      <a href="#stir">炒類</a><a href="#soup">湯類</a><a href="#rice">飯類</a><a href="#noodle">麵類</a><a href="#fish">魚類</a><a href="#side">其他</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div class="hero-card">
+      <strong>台南牛肉湯與熱炒的在地小店。</strong>
+      <p>牛肉湯、牛肉炒飯、芥藍牛肉、麻油牛肉など、昼夜どちらでも食べやすいメニューをまとめました。</p>
+      <div class="notice">辛さ：大辣・中辣・小辣に調整できます。口味調整はスタッフにお伝えください。</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="filters">
+      <button class="active" onclick="filterItems('all', this)">全部</button>
+      <button onclick="filterItems('popular', this)">おすすめ</button>
+      <button onclick="filterItems('small', this)">小份あり</button>
+      <button onclick="filterItems('takeout', this)">外帶</button>
+    </div>
+
+    <section id="stir">
+      <h2>炒類</h2>
+      <div class="grid">
+        <div class="item popular small"><div class="item-top"><div><div class="name"><span class="star">★</span>芥藍牛肉</div><div class="sub">定番の牛肉野菜炒め</div></div><div class="price"><span class="sizes">小/大</span><br>160 / 190</div></div></div>
+        <div class="item small"><div class="item-top"><div class="name">清炒芥藍牛肉</div><div class="price">160 / 190</div></div></div>
+        <div class="item small"><div class="item-top"><div class="name">芥藍牛腩</div><div class="price">160 / 190</div></div></div>
+        <div class="item small"><div class="item-top"><div class="name">高麗菜牛肉</div><div class="price">160 / 190</div></div></div>
+        <div class="item popular small"><div class="item-top"><div class="name"><span class="star">★</span>蔥爆牛肉</div><div class="price">160 / 190</div></div></div>
+        <div class="item small"><div class="item-top"><div class="name">空心菜牛肉</div><div class="price">160 / 190</div></div></div>
+        <div class="item popular small"><div class="item-top"><div class="name"><span class="star">★</span>芥藍牛雜</div><div class="price">160 / 190</div></div></div>
+        <div class="item small"><div class="item-top"><div class="name">炒牛肚</div><div class="price">160 / 190</div></div></div>
+        <div class="item popular small"><div class="item-top"><div class="name"><span class="star">★</span>麻油牛肉</div><div class="price">270 / 320</div></div></div>
+        <div class="item small"><div class="item-top"><div class="name">麻油牛心</div><div class="price">250 / 300</div></div></div>
+        <div class="item small"><div class="item-top"><div class="name">麻油牛肝</div><div class="price">250 / 300</div></div></div>
+        <div class="item popular small"><div class="item-top"><div class="name"><span class="star">★</span>蒜香牛肉</div><div class="price">270 / 320</div></div></div>
+        <div class="item"><div class="item-top"><div class="name">季節時蔬</div><div class="price">80</div></div></div>
+      </div>
+    </section>
+
+    <section id="soup">
+      <h2>湯類</h2>
+      <div class="grid">
+        <div class="item popular small"><div class="item-top"><div class="name"><span class="star">★</span>牛肉湯</div><div class="price">140 / 190 / 全熟</div></div></div>
+        <div class="item small"><div class="item-top"><div class="name">牛腩湯</div><div class="price">140 / 190</div></div></div>
+        <div class="item small"><div class="item-top"><div class="name">牛心湯</div><div class="price">140 / 190</div></div></div>
+        <div class="item small"><div class="item-top"><div class="name">牛肝湯</div><div class="price">140 / 190</div></div></div>
+        <div class="item small"><div class="item-top"><div class="name">牛雜湯</div><div class="price">140 / 190</div></div></div>
+        <div class="item small"><div class="item-top"><div class="name">綜合湯</div><div class="price">140 / 190</div></div></div>
+      </div>
+    </section>
+
+    <section id="rice">
+      <h2>飯類</h2>
+      <div class="grid">
+        <div class="item popular small"><div class="item-top"><div class="name"><span class="star">★</span>牛肉燴飯</div><div class="price">170 / 200</div></div></div>
+        <div class="item small"><div class="item-top"><div class="name">牛肉炒飯</div><div class="price">170 / 200</div></div></div>
+        <div class="item small"><div class="item-top"><div class="name">牛肉蓋飯</div><div class="price">170 / 200</div></div></div>
+        <div class="item small"><div class="item-top"><div class="name">蠔油牛肉燴飯</div><div class="price">170 / 200</div></div></div>
+        <div class="item small"><div class="item-top"><div class="name">蠔油牛肉炒飯</div><div class="price">170 / 200</div></div></div>
+        <div class="item takeout"><div class="item-top"><div class="name"><span class="star">★</span>魚鬆肉燥飯</div><div class="price">外帶 40 / 50</div></div></div>
+        <div class="item takeout"><div class="item-top"><div class="name"><span class="star">★</span>肉燥飯</div><div class="price">外帶 30 / 40</div></div></div>
+        <div class="item takeout"><div class="item-top"><div class="name">白飯</div><div class="price">外帶 15</div></div></div>
+      </div>
+    </section>
+
+    <section id="noodle">
+      <h2>湯麵・炒麵</h2>
+      <div class="grid">
+        <div class="item small"><div class="item-top"><div><div class="name">牛肉清湯麵</div><div class="sub">不是紅燒牛肉麵</div></div><div class="price">170 / 200</div></div></div>
+        <div class="item small"><div class="item-top"><div class="name">牛肉炒麵</div><div class="price">170 / 200</div></div></div>
+        <div class="item popular small"><div class="item-top"><div class="name"><span class="star">★</span>蔥爆牛肉炒麵</div><div class="price">170 / 200</div></div></div>
+      </div>
+    </section>
+
+    <section id="fish">
+      <h2>魚類</h2>
+      <div class="grid">
+        <div class="item small"><div class="item-top"><div class="name"><span class="star">★</span>龍膽魚湯</div><div class="price">160 / 200</div></div></div>
+        <div class="item small"><div class="item-top"><div class="name">龍膽魚粥</div><div class="price">170 / 210</div></div></div>
+        <div class="item small"><div class="item-top"><div class="name">味噌龍膽魚湯</div><div class="price">160 / 200</div></div></div>
+      </div>
+    </section>
+
+    <section id="side">
+      <h2>其他</h2>
+      <div class="grid">
+        <div class="item"><div class="item-top"><div class="name"><span class="star">★</span>蔥仔蛋</div><div class="price">80</div></div></div>
+        <div class="item"><div class="item-top"><div class="name">滷蛋</div><div class="price">15</div></div></div>
+        <div class="item"><div class="item-top"><div class="name">滷豆腐</div><div class="price">15</div></div></div>
+        <div class="item"><div class="item-top"><div class="name">罐裝飲料</div><div class="price">20</div></div></div>
+        <div class="item"><div class="item-top"><div class="name">茶葉蛋</div><div class="price">80</div></div></div>
+      </div>
+    </section>
+    <footer>※ 写真メニューから作成した仮データです。価格・品名は店舗で確認してください。</footer>
+  </main>
+
+  <div class="bottom-bar">
+    <div class="bottom-text">フォーム送信後、店から確認連絡が来て注文確定です。</div>
+    <a href="tel:062092625">電話</a>
+    <a href="https://forms.gle/ここにGoogleフォームURL" target="_blank">注文する</a>
+  </div>
+    <a href="tel:062092625">電話する</a>
+  </div>
+
+  <script>
+    function filterItems(type, button){
+      document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));
+      button.classList.add('active');
+      document.querySelectorAll('.item').forEach(item=>{
+        item.style.display = (type === 'all' || item.classList.contains(type)) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
