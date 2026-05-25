@@ -200,7 +200,7 @@
 
     .footer {
       display: grid;
-      grid-template-columns: 1fr 260px;
+      grid-template-columns: 1fr;
       gap: 22px;
       margin-top: 14px;
       align-items: end;
@@ -217,30 +217,42 @@
       align-items: center;
     }
 
-    .table-no {
-      border: 3px solid #2d2430;
-      border-radius: 10px;
-      height: 76px;
-      display: grid;
-      grid-template-columns: 78px 1fr;
-      overflow: hidden;
-      background: var(--paper);
+
+    .lang-switch {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      display: flex;
+      gap: 4px;
+      z-index: 5;
     }
 
-    .table-no .label {
-      font-size: 23px;
+    .lang-switch button {
+      border: 2px solid var(--line);
+      background: rgba(255,255,255,.28);
+      color: var(--ink);
       font-weight: 900;
-      line-height: 1.15;
-      padding: 10px 0 0 20px;
-      border-right: 2px solid #2d2430;
+      font-size: 13px;
+      line-height: 1;
+      padding: 5px 8px;
+      border-radius: 999px;
+      cursor: pointer;
     }
 
-    .table-no .num {
-      font-size: 74px;
-      line-height: .9;
-      text-align: center;
-      font-weight: 300;
-      padding-top: 5px;
+    .lang-switch button.active {
+      background: var(--dark);
+      color: #fff;
+    }
+
+    .section-subtitle {
+      font-size: 13px;
+      margin-left: 8px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .item-name {
+      display: inline;
     }
 
     /*
@@ -386,11 +398,6 @@
         padding: 10px 12px;
       }
 
-      .table-no {
-        width: min(100%, 300px);
-        justify-self: end;
-        height: 74px;
-      }
     }
 
     @media (max-width: 390px) {
@@ -424,6 +431,11 @@
 </head>
 <body>
   <main class="menu-sheet">
+    <div class="lang-switch" aria-label="Language switch">
+      <button type="button" class="active" data-lang-btn="zh">中文</button>
+      <button type="button" data-lang-btn="en">EN</button>
+      <button type="button" data-lang-btn="jp">JP</button>
+    </div>
     <div class="clip" aria-hidden="true"></div>
 
     <header>
@@ -451,7 +463,7 @@
     <div class="content">
       <section class="left-col">
         <div class="section">
-          <div class="section-title">炒 類</div>
+          <div class="section-title" data-zh="炒 類" data-en="Stir-fried" data-jp="炒め物">炒 類</div><span class="section-subtitle" data-zh="" data-en="Stir-fried dishes" data-jp="炒め物"></span>
           <table>
             <thead>
               <tr>
@@ -459,36 +471,36 @@
               </tr>
             </thead>
             <tbody>
-              <tr><td class="item"><span class="star">★</span>芥藍牛肉</td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
-              <tr><td class="item">滑炒牛肉</td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
-              <tr><td class="item">芥藍牛腩</td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
-              <tr><td class="item">高麗牛肉</td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
-              <tr><td class="item"><span class="star">★</span>蔥爆牛肉</td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
-              <tr><td class="item">空心菜牛肉</td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
-              <tr><td class="item"><span class="star">★</span>芥藍牛肚</td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
-              <tr><td class="item">炒牛肝</td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
-              <tr><td class="item"><span class="star">★</span>麻油牛肉</td><td class="price">270</td><td class="box-cell"><span class="order-box"></span></td><td class="price">320</td><td class="box-cell"><span class="order-box"></span></td><td></td><td></td></tr>
-              <tr><td class="item">麻油牛心</td><td class="price">250</td><td class="box-cell"><span class="order-box"></span></td><td class="price">300</td><td class="box-cell"><span class="order-box"></span></td><td></td><td></td></tr>
-              <tr><td class="item">麻油牛肝</td><td class="price">250</td><td class="box-cell"><span class="order-box"></span></td><td class="price">300</td><td class="box-cell"><span class="order-box"></span></td><td></td><td></td></tr>
-              <tr><td class="item"><span class="star">★</span>蒜香牛肉</td><td class="price">270</td><td class="box-cell"><span class="order-box"></span></td><td class="price">320</td><td class="box-cell"><span class="order-box"></span></td><td></td><td></td></tr>
-              <tr><td class="item">季節時蔬</td><td class="price">80</td><td class="box-cell"><span class="order-box"></span></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td class="item"><span class="star">★</span><span class="item-name" data-zh="芥藍牛肉" data-en="Beef with Chinese kale" data-jp="牛肉カイラン炒め">芥藍牛肉</span></td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="清炒芥藍牛肉" data-en="Light stir-fried beef with Chinese kale" data-jp="あっさり牛肉カイラン炒め">清炒芥藍牛肉</span></td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="芥藍牛腩" data-en="Beef brisket with Chinese kale" data-jp="牛バラカイラン炒め">芥藍牛腩</span></td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="高麗菜牛肉" data-en="Beef with cabbage" data-jp="牛肉キャベツ炒め">高麗菜牛肉</span></td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item"><span class="star">★</span><span class="item-name" data-zh="蔥爆牛肉" data-en="Scallion stir-fried beef" data-jp="牛肉ネギ炒め">蔥爆牛肉</span></td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="空心菜牛肉" data-en="Beef with water spinach" data-jp="牛肉空心菜炒め">空心菜牛肉</span></td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item"><span class="star">★</span><span class="item-name" data-zh="芥藍牛雜" data-en="Mixed beef offal with Chinese kale" data-jp="牛モツカイラン炒め">芥藍牛雜</span></td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="炒牛肚" data-en="Stir-fried beef tripe" data-jp="牛ハチノス炒め">炒牛肚</span></td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item"><span class="star">★</span><span class="item-name" data-zh="麻油牛肉" data-en="Sesame oil beef" data-jp="ごま油牛肉炒め">麻油牛肉</span></td><td class="price">270</td><td class="box-cell"><span class="order-box"></span></td><td class="price">320</td><td class="box-cell"><span class="order-box"></span></td><td></td><td></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="麻油牛心" data-en="Sesame oil beef heart" data-jp="ごま油牛ハツ炒め">麻油牛心</span></td><td class="price">250</td><td class="box-cell"><span class="order-box"></span></td><td class="price">300</td><td class="box-cell"><span class="order-box"></span></td><td></td><td></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="麻油牛肝" data-en="Sesame oil beef liver" data-jp="ごま油牛レバー炒め">麻油牛肝</span></td><td class="price">250</td><td class="box-cell"><span class="order-box"></span></td><td class="price">300</td><td class="box-cell"><span class="order-box"></span></td><td></td><td></td></tr>
+              <tr><td class="item"><span class="star">★</span><span class="item-name" data-zh="蒜香牛肉" data-en="Garlic beef" data-jp="にんにく牛肉炒め">蒜香牛肉</span></td><td class="price">270</td><td class="box-cell"><span class="order-box"></span></td><td class="price">320</td><td class="box-cell"><span class="order-box"></span></td><td></td><td></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="季節時蔬" data-en="Seasonal vegetables" data-jp="旬の野菜炒め">季節時蔬</span></td><td class="price">80</td><td class="box-cell"><span class="order-box"></span></td><td></td><td></td><td></td><td></td></tr>
             </tbody>
           </table>
         </div>
 
         <div class="section">
-          <div class="section-title">湯 類</div>
+          <div class="section-title" data-zh="湯 類" data-en="Soups" data-jp="スープ">湯 類</div><span class="section-subtitle" data-zh="" data-en="Soups" data-jp="スープ"></span>
           <table>
             <thead>
               <tr><th></th><th>小</th><th></th><th>大</th><th></th><th colspan="2">全熟大龍</th></tr>
             </thead>
             <tbody>
-              <tr><td class="item"><span class="star">★</span>牛肉湯</td><td class="price">140</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
-              <tr><td class="item">牛腩湯</td><td class="price">140</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
-              <tr><td class="item">牛心湯</td><td class="price">140</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
-              <tr><td class="item">牛肝湯</td><td class="price">140</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
-              <tr><td class="item">牛雜湯</td><td class="price">140</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
-              <tr><td class="item">綜合湯</td><td class="price">140</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item"><span class="star">★</span><span class="item-name" data-zh="牛肉湯" data-en="Beef soup" data-jp="牛肉湯">牛肉湯</span></td><td class="price">140</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="牛腩湯" data-en="Beef brisket soup" data-jp="牛バラ湯">牛腩湯</span></td><td class="price">140</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="牛心湯" data-en="Beef heart soup" data-jp="牛ハツ湯">牛心湯</span></td><td class="price">140</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="牛肝湯" data-en="Beef liver soup" data-jp="牛レバー湯">牛肝湯</span></td><td class="price">140</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="牛雜湯" data-en="Mixed beef offal soup" data-jp="牛モツ湯">牛雜湯</span></td><td class="price">140</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="綜合湯" data-en="Assorted beef soup" data-jp="ミックス牛肉湯">綜合湯</span></td><td class="price">140</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
             </tbody>
           </table>
         </div>
@@ -496,67 +508,67 @@
 
       <section class="right-col">
         <div class="section">
-          <div class="section-title">飯 類</div>
+          <div class="section-title" data-zh="飯 類" data-en="Rice" data-jp="ご飯もの">飯 類</div><span class="section-subtitle" data-zh="" data-en="Rice dishes" data-jp="ご飯もの"></span>
           <table>
             <thead>
               <tr><th></th><th>小</th><th></th><th>大</th><th></th><th>辣</th><th></th></tr>
             </thead>
             <tbody>
-              <tr><td class="item">牛肉燴飯</td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
-              <tr><td class="item">牛肉飯</td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
-              <tr><td class="item">牛肉蓋飯</td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
-              <tr><td class="item">讓汁肉飯</td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
-              <tr><td class="item">讓汁炒飯</td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
-              <tr><td class="item"><span class="star">★</span>魚蛋肉飯</td><td class="price">35</td><td class="box-cell"><span class="order-box"></span></td><td class="price">45</td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
-              <tr><td class="item"><span class="star">★</span>肉燥飯</td><td class="price">25</td><td class="box-cell"><span class="order-box"></span></td><td class="price">35</td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
-              <tr><td class="item">白飯</td><td class="price">10</td><td class="box-cell"><span class="order-box"></span></td><td></td><td></td><td></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="牛肉燴飯" data-en="Beef rice with gravy" data-jp="牛肉あんかけご飯">牛肉燴飯</span></td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="牛肉炒飯" data-en="Beef fried rice" data-jp="牛肉チャーハン">牛肉炒飯</span></td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="牛肉蓋飯" data-en="Beef rice bowl" data-jp="牛丼風ご飯">牛肉蓋飯</span></td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="蠔油牛肉燴飯" data-en="Oyster sauce beef rice" data-jp="牛肉オイスターソースあんかけご飯">蠔油牛肉燴飯</span></td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="蠔油牛肉炒飯" data-en="Oyster sauce beef fried rice" data-jp="牛肉オイスター炒飯">蠔油牛肉炒飯</span></td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
+              <tr><td class="item"><span class="star">★</span><span class="item-name" data-zh="魚鬆肉燥飯" data-en="Minced pork rice with fish floss" data-jp="肉そぼろご飯＋魚フレーク">魚鬆肉燥飯</span></td><td class="price">35</td><td class="box-cell"><span class="order-box"></span></td><td class="price">45</td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item"><span class="star">★</span><span class="item-name" data-zh="肉燥飯" data-en="Braised minced pork rice" data-jp="台湾ルーロー飯">肉燥飯</span></td><td class="price">25</td><td class="box-cell"><span class="order-box"></span></td><td class="price">35</td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="白飯" data-en="Steamed rice" data-jp="白ご飯">白飯</span></td><td class="price">10</td><td class="box-cell"><span class="order-box"></span></td><td></td><td></td><td></td></tr>
             </tbody>
           </table>
         </div>
 
         <div class="section">
-          <div class="section-title">湯麵類</div><span class="inline-note">小/大 札咖中麵</span>
+          <div class="section-title" data-zh="湯麵" data-en="Soup noodles" data-jp="スープ麺">湯麵</div><span class="inline-note" data-zh="有鮮肉／不是紅燒牛肉麵" data-en="Clear soup, not braised beef noodles" data-jp="あっさり系・紅焼牛肉麺ではありません">有鮮肉／不是紅燒牛肉麵</span>
           <table>
             <tbody>
-              <tr><td class="item">牛肉湯麵</td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="牛肉清湯麵" data-en="Clear beef soup noodles" data-jp="あっさり牛肉スープ麺">牛肉清湯麵</span></td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td></tr>
             </tbody>
           </table>
         </div>
 
         <div class="section">
-          <div class="section-title">炒麵類</div>
+          <div class="section-title" data-zh="炒麵" data-en="Fried noodles" data-jp="焼きそば">炒麵</div><span class="section-subtitle" data-zh="有鮮肉" data-en="Fried noodles" data-jp="焼きそば"></span>
           <table>
             <thead>
               <tr><th></th><th>小</th><th></th><th>大</th><th></th><th>辣</th><th></th></tr>
             </thead>
             <tbody>
-              <tr><td class="item">牛肉炒麵</td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
-              <tr><td class="item"><span class="star">★</span>蔥爆牛炒麵</td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="牛肉炒麵" data-en="Beef fried noodles" data-jp="牛肉焼きそば">牛肉炒麵</span></td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
+              <tr><td class="item"><span class="star">★</span><span class="item-name" data-zh="蔥爆牛肉炒麵" data-en="Scallion beef fried noodles" data-jp="ネギ牛肉焼きそば">蔥爆牛肉炒麵</span></td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
             </tbody>
           </table>
         </div>
 
         <div class="section">
-          <div class="section-title">煎 類</div>
+          <div class="section-title" data-zh="魚 類" data-en="Fish" data-jp="魚料理">魚 類</div><span class="section-subtitle" data-zh="" data-en="Fish dishes" data-jp="魚料理"></span>
           <table>
             <thead>
               <tr><th></th><th>小</th><th></th><th>大</th><th></th></tr>
             </thead>
             <tbody>
-              <tr><td class="item"><span class="star">★</span>龍膽魚湯</td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td></tr>
-              <tr><td class="item">龍膽魚粥</td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">210</td><td class="box-cell"><span class="order-box"></span></td></tr>
-              <tr><td class="item">味噌龍膽湯</td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td></tr>
+              <tr><td class="item"><span class="star">★</span><span class="item-name" data-zh="龍膽魚湯" data-en="Grouper fish soup" data-jp="ハタスープ">龍膽魚湯</span></td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="龍膽魚粥" data-en="Grouper fish porridge" data-jp="ハタのお粥">龍膽魚粥</span></td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">210</td><td class="box-cell"><span class="order-box"></span></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="味噌龍膽魚湯" data-en="Miso grouper fish soup" data-jp="ハタの味噌スープ">味噌龍膽魚湯</span></td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td></tr>
             </tbody>
           </table>
         </div>
 
         <div class="section">
-          <div class="section-title">其 他</div>
+          <div class="section-title" data-zh="其 他" data-en="Others" data-jp="その他">其 他</div><span class="section-subtitle" data-zh="" data-en="Others" data-jp="その他"></span>
           <table>
             <tbody>
-              <tr><td class="item"><span class="star">★</span>滷仔蛋</td><td class="price">80</td><td class="box-cell"><span class="order-box"></span></td><td class="item">鐵拔料</td><td class="price">20</td><td class="box-cell"><span class="order-box"></span></td></tr>
-              <tr><td class="item">滷蛋</td><td class="price">15</td><td class="box-cell"><span class="order-box"></span></td><td class="item">菜脯蛋</td><td class="price">80</td><td class="box-cell"><span class="order-box"></span></td></tr>
-              <tr><td class="item">滷豆腐</td><td class="price">15</td><td class="box-cell"><span class="order-box"></span></td><td></td><td></td><td></td></tr>
+              <tr><td class="item"><span class="star">★</span><span class="item-name" data-zh="蔥仔蛋" data-en="Scallion omelet" data-jp="ネギ入り卵焼き">蔥仔蛋</span></td><td class="price">80</td><td class="box-cell"><span class="order-box"></span></td><td class="item"><span class="item-name" data-zh="罐裝飲料" data-en="Canned drinks" data-jp="缶ジュース">罐裝飲料</span></td><td class="price">20</td><td class="box-cell"><span class="order-box"></span></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="滷蛋" data-en="Braised egg" data-jp="台湾風煮卵">滷蛋</span></td><td class="price">15</td><td class="box-cell"><span class="order-box"></span></td><td class="item"><span class="item-name" data-zh="菜脯蛋" data-en="Omelet with preserved radish" data-jp="切り干し大根入り卵焼き">菜脯蛋</span></td><td class="price">80</td><td class="box-cell"><span class="order-box"></span></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="滷豆腐" data-en="Braised tofu" data-jp="台湾風煮込み豆腐">滷豆腐</span></td><td class="price">15</td><td class="box-cell"><span class="order-box"></span></td><td></td><td></td><td></td></tr>
             </tbody>
           </table>
         </div>
@@ -564,16 +576,40 @@
     </div>
 
     <footer class="footer">
-      <div class="taste-note">
+      <div class="taste-note" data-zh="因每個人對鹹甜口味不同，<br>若需調整口味請先告知工作人員，<br>謝謝您~" data-en="Everyone has different tastes.<br>Please tell our staff first<br>if you need flavor adjustments." data-jp="味の好みには個人差があります。<br>味の調整が必要な場合は、<br>先にスタッフへお伝えください。">
         因每個人對鹹甜口味不同，<br>
         若需調整口味請先告知工作人員，<br>
         謝謝您~
       </div>
-      <div class="table-no">
-        <div class="label">內用<br>桌號</div>
-        <div class="num">5</div>
-      </div>
+
     </footer>
   </main>
+
+  <script>
+    const buttons = document.querySelectorAll("[data-lang-btn]");
+    const translatable = document.querySelectorAll("[data-zh][data-en][data-jp]");
+
+    function setLanguage(lang) {
+      translatable.forEach((el) => {
+        const value = el.dataset[lang] || el.dataset.zh;
+        if (el.classList.contains("taste-note")) {
+          el.innerHTML = value;
+        } else {
+          el.textContent = value;
+        }
+      });
+
+      buttons.forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.langBtn === lang);
+      });
+
+      document.documentElement.lang = lang === "jp" ? "ja" : (lang === "en" ? "en" : "zh-Hant");
+    }
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => setLanguage(btn.dataset.langBtn));
+    });
+  </script>
+
 </body>
 </html>
