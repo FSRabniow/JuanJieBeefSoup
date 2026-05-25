@@ -1,372 +1,579 @@
-<!doctype html>
-<html lang="ja">
+<!DOCTYPE html>
+<html lang="zh-Hant">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>娟姐牛肉湯｜日本語・English Menu</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>娟姐牛肉湯 菜單</title>
   <style>
-    :root{
-      --bg:#fff0f6;
-      --card:#ffffff;
-      --ink:#2b1b24;
-      --muted:#8a6473;
-      --accent:#d63384;
-      --accent2:#ff8cc6;
-      --line:#f5c2d9;
-      --shadow:0 10px 28px rgba(214,51,132,.14);
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
     }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP","Noto Sans TC","Segoe UI",sans-serif;
-      background:linear-gradient(180deg,#ffe0ef 0%,#fff0f6 45%,#fff 100%);
-      color:var(--ink);
-      line-height:1.5;
+
+    :root {
+      --paper: #f4a3d3;
+      --ink: #241921;
+      --dark: #5a5058;
+      --line: #4d3a4a;
+      --bg: #666;
     }
-    header{
-      position:sticky;
-      top:0;
-      z-index:10;
-      background:rgba(255,240,246,.94);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid var(--line);
-      padding:14px 16px 10px;
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      font-family: "Noto Sans TC", "Microsoft JhengHei", "PingFang TC", Arial, sans-serif;
+      color: var(--ink);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 16px;
     }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      justify-content:space-between;
+
+    .menu-sheet {
+      width: 760px;
+      max-width: 100%;
+      background: var(--paper);
+      padding: 28px 28px 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.35);
+      position: relative;
     }
-    h1{
-      font-size:26px;
-      margin:0;
-      font-weight:900;
-      letter-spacing:.03em;
+
+    .clip {
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 330px;
+      max-width: 55%;
+      height: 45px;
+      border: 12px solid #202020;
+      border-bottom: none;
+      border-radius: 8px 8px 0 0;
+      opacity: .85;
     }
-    .badge{
-      background:var(--accent);
-      color:#fff;
-      border-radius:999px;
-      padding:5px 10px;
-      font-size:12px;
-      font-weight:700;
-      white-space:nowrap;
+
+    header {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: end;
+      gap: 10px;
+      margin-bottom: 6px;
     }
-    .info{
-      font-size:13px;
-      color:var(--muted);
-      margin-top:6px;
+
+    .shop-name {
+      grid-column: 2;
+      font-size: 34px;
+      line-height: 1;
+      letter-spacing: .20em;
+      font-weight: 900;
+      white-space: nowrap;
     }
-    .tabs{
-      display:flex;
-      gap:8px;
-      overflow-x:auto;
-      padding:12px 0 2px;
-      scrollbar-width:none;
+
+    .address {
+      grid-column: 1;
+      font-size: 15px;
+      line-height: 1.45;
+      align-self: end;
     }
-    .tabs a{
-      flex:0 0 auto;
-      text-decoration:none;
-      color:var(--ink);
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:999px;
-      padding:8px 12px;
-      font-size:14px;
-      font-weight:700;
+
+    .tel {
+      grid-column: 3;
+      font-size: 15px;
+      line-height: 1.35;
+      white-space: nowrap;
+      align-self: end;
     }
-    .hero{padding:18px 16px 10px}
-    .hero-card{
-      background:var(--card);
-      border-radius:22px;
-      box-shadow:var(--shadow);
-      padding:18px;
-      border:1px solid #fff;
+
+    .top-options {
+      font-size: 15px;
+      margin: 0 0 8px 0;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: space-between;
     }
-    .hero-card strong{font-size:16px}
-    .notice{
-      background:#ffe0ef;
-      border:1px dashed #ff8cc6;
-      border-radius:16px;
-      padding:10px 12px;
-      margin-top:12px;
-      font-size:13px;
-      color:#8a1c52;
+
+    .ps {
+      background: var(--dark);
+      color: white;
+      border-radius: 18px;
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      padding: 2px 24px;
+      white-space: nowrap;
     }
-    main{padding:0 16px 100px}
-    section{margin:18px 0;scroll-margin-top:120px}
-    h2{
-      font-size:20px;
-      margin:0 0 10px;
-      display:flex;
-      align-items:center;
-      gap:8px;
+
+    .checkbox {
+      display: inline-block;
+      width: 28px;
+      height: 18px;
+      border: 2px solid var(--line);
+      vertical-align: middle;
+      background: transparent;
+      margin: 0 8px 0 3px;
     }
-    h2::before{
-      content:"";
-      width:7px;
-      height:22px;
-      background:var(--accent);
-      border-radius:999px;
+
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items: start;
     }
-    .grid{display:grid;gap:10px}
-    .item{
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:13px 14px;
-      box-shadow:0 4px 14px rgba(50,35,15,.06);
+
+    .section {
+      margin-bottom: 8px;
+      break-inside: avoid;
     }
-    .item-top{
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      align-items:flex-start;
+
+    .section-title {
+      background: var(--dark);
+      color: #fff;
+      display: inline-block;
+      min-width: 106px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: 900;
+      padding: 1px 10px 2px;
+      margin-bottom: 3px;
+      letter-spacing: .18em;
     }
-    .name{font-weight:800;font-size:16px}
-    .en{font-size:12px;color:var(--muted);margin-top:2px;font-weight:600}
-    .star{color:var(--accent);font-weight:900;margin-right:2px}
-    .price{
-      text-align:right;
-      white-space:nowrap;
-      font-weight:900;
-      color:var(--accent);
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 18px;
+      line-height: 1.14;
     }
-    .sub{font-size:12px;color:var(--muted);margin-top:2px}
-    .sizes{font-size:13px;color:var(--muted);font-weight:600}
-    .order-card{
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:14px;
-      box-shadow:0 4px 14px rgba(214,51,132,.08);
-      display:grid;
-      gap:8px;
+
+    th {
+      font-size: 16px;
+      font-weight: 700;
+      text-align: center;
+      padding: 0 0 2px;
     }
-    .order-card label{
-      font-weight:900;
-      font-size:14px;
-      color:var(--ink);
-      margin-top:4px;
+
+    td {
+      padding: 1px 0;
+      vertical-align: middle;
+      white-space: nowrap;
     }
-    .order-card select,
-    .order-card textarea{
-      width:100%;
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:10px 12px;
-      font-size:15px;
-      font-family:inherit;
-      background:#fff;
-      color:var(--ink);
-      outline:none;
+
+    td.item {
+      width: 47%;
+      letter-spacing: .06em;
     }
-    .order-card textarea{resize:vertical}
-    .filters{
-      display:flex;
-      gap:8px;
-      margin:10px 0 14px;
-      flex-wrap:wrap;
+
+    td.price {
+      width: 38px;
+      text-align: right;
+      padding-right: 5px;
+      letter-spacing: 0;
     }
-    button{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:999px;
-      padding:8px 11px;
-      font-weight:800;
-      color:var(--ink);
+
+    td.box-cell {
+      width: 33px;
+      text-align: center;
     }
-    button.active{
-      background:var(--accent);
-      color:#fff;
-      border-color:var(--accent);
+
+    .order-box {
+      display: inline-block;
+      width: 33px;
+      height: 22px;
+      border: 2px solid var(--line);
+      vertical-align: middle;
     }
-    .bottom-bar{
-      position:fixed;
-      left:12px;
-      right:12px;
-      bottom:12px;
-      background:rgba(214,51,132,.96);
-      color:#fff;
-      border-radius:22px;
-      padding:12px;
-      box-shadow:var(--shadow);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      z-index:20;
+
+    .star {
+      display: inline-block;
+      width: 14px;
+      margin-right: 2px;
+      font-size: 13px;
     }
-    .bottom-bar a{
-      width:100%;
-      color:#2b1b24;
-      background:#fff;
-      border-radius:999px;
-      padding:12px 13px;
-      text-decoration:none;
-      font-weight:900;
-      font-size:16px;
-      text-align:center;
-      white-space:nowrap;
+
+    .inline-note {
+      font-size: 14px;
+      margin-left: 18px;
+      letter-spacing: 0;
     }
-    footer{
-      color:var(--muted);
-      font-size:12px;
-      text-align:center;
-      margin-top:24px;
+
+    .footer {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 22px;
+      margin-top: 14px;
+      align-items: end;
     }
-    @media(min-width:720px){
-      body{
-        max-width:430px;
-        margin:0 auto;
-        border-left:1px solid #eee;
-        border-right:1px solid #eee;
+
+    .taste-note {
+      border: 2px solid #2d2430;
+      border-radius: 14px;
+      padding: 10px 14px;
+      font-size: 17px;
+      line-height: 1.35;
+      min-height: 66px;
+      display: flex;
+      align-items: center;
+    }
+
+    .table-no {
+      border: 3px solid #2d2430;
+      border-radius: 10px;
+      height: 76px;
+      display: grid;
+      grid-template-columns: 78px 1fr;
+      overflow: hidden;
+      background: var(--paper);
+    }
+
+    .table-no .label {
+      font-size: 23px;
+      font-weight: 900;
+      line-height: 1.15;
+      padding: 10px 0 0 20px;
+      border-right: 2px solid #2d2430;
+    }
+
+    .table-no .num {
+      font-size: 74px;
+      line-height: .9;
+      text-align: center;
+      font-weight: 300;
+      padding-top: 5px;
+    }
+
+    /*
+      スマホ用：
+      元の紙メニューの「2カラム・注文票」形式は保ったまま、
+      横スクロールで全体を見せるのではなく、各列を縦に積んで読みやすくしています。
+    */
+    @media (max-width: 720px) {
+      body {
+        padding: 0;
+        background: var(--paper);
       }
-      .bottom-bar{max-width:406px;margin:0 auto;}
+
+      .menu-sheet {
+        width: 100%;
+        min-height: 100vh;
+        padding: 20px 10px 18px;
+        box-shadow: none;
+      }
+
+      .clip {
+        display: none;
+      }
+
+      header {
+        grid-template-columns: 1fr;
+        gap: 5px;
+        text-align: center;
+        margin-bottom: 8px;
+      }
+
+      .shop-name {
+        grid-column: 1;
+        order: -1;
+        font-size: clamp(30px, 8.2vw, 42px);
+        letter-spacing: .14em;
+        padding-left: .14em;
+        margin-bottom: 4px;
+      }
+
+      .address,
+      .tel {
+        grid-column: 1;
+        font-size: clamp(13px, 3.5vw, 16px);
+        line-height: 1.35;
+        white-space: normal;
+      }
+
+      .top-options {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 6px;
+        font-size: 15px;
+        margin-bottom: 10px;
+      }
+
+      .ps {
+        font-size: 18px;
+        padding: 3px 26px;
+      }
+
+      .content {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+
+      .section {
+        margin-bottom: 12px;
+      }
+
+      .section-title {
+        font-size: 20px;
+        min-width: 112px;
+        padding: 3px 10px 4px;
+        border-radius: 2px;
+      }
+
+      table {
+        font-size: clamp(16px, 4.25vw, 20px);
+        line-height: 1.2;
+      }
+
+      th {
+        font-size: clamp(13px, 3.5vw, 16px);
+      }
+
+      td {
+        padding: 3px 0;
+      }
+
+      td.item {
+        width: auto;
+        letter-spacing: .03em;
+      }
+
+      td.price {
+        width: 34px;
+        padding-right: 3px;
+      }
+
+      td.box-cell {
+        width: 40px;
+      }
+
+      .order-box,
+      .checkbox {
+        border-width: 2px;
+      }
+
+      .order-box {
+        width: 36px;
+        height: 28px;
+        border-radius: 2px;
+      }
+
+      .checkbox {
+        width: 30px;
+        height: 22px;
+      }
+
+      .star {
+        width: 13px;
+        margin-right: 1px;
+      }
+
+      .inline-note {
+        display: inline-block;
+        margin-left: 8px;
+        font-size: 13px;
+      }
+
+      .footer {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 12px;
+      }
+
+      .taste-note {
+        font-size: 15px;
+        line-height: 1.45;
+        min-height: auto;
+        padding: 10px 12px;
+      }
+
+      .table-no {
+        width: min(100%, 300px);
+        justify-self: end;
+        height: 74px;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .menu-sheet {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+
+      table {
+        font-size: 15.5px;
+      }
+
+      td.box-cell {
+        width: 35px;
+      }
+
+      .order-box {
+        width: 32px;
+        height: 26px;
+      }
+
+      td.price {
+        width: 30px;
+      }
+
+      .section-title {
+        font-size: 19px;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="brand">
-      <h1>娟姐牛肉湯</h1>
-      <span class="badge">JP / EN Menu</span>
-    </div>
-    <div class="info">台南市北區勝利路381號<br>営業時間：11:00－21:00｜日曜・第1月曜 定休<br>Hours: 11:00 AM－9:00 PM｜Closed: Sundays & first Monday</div>
-    <nav class="tabs" aria-label="Menu categories">
-      <a href="#order-options">注文 / Order</a>
-      <a href="#stir">炒め物 / Stir-fried</a>
-      <a href="#soup">スープ / Soup</a>
-      <a href="#rice">ご飯 / Rice</a>
-      <a href="#noodle">麺 / Noodles</a>
-      <a href="#fish">魚 / Fish</a>
-      <a href="#side">その他 / Sides</a>
-    </nav>
-  </header>
+  <main class="menu-sheet">
+    <div class="clip" aria-hidden="true"></div>
 
-  <div class="hero">
-    <div class="hero-card">
-      <strong>台南ローカルの牛肉湯と熱炒のお店。<br>Tainan local beef soup and stir-fry restaurant.</strong>
-      <div class="notice">辛さ調整できます：激辛／中辛／小辛／辛くしない。<br>Spice level can be adjusted: very spicy / medium / mild / non-spicy.</div>
-    </div>
-  </div>
-
-  <main>
-    <section id="order-options" class="order-options">
-      <h2>注文オプション / Order Options</h2>
-      <div class="order-card">
-        <label for="portion-size">サイズ / Portion Size</label>
-        <select id="portion-size" name="portion-size">
-          <option value="small">小 / Small</option>
-          <option value="large">大 / Large</option>
-        </select>
-
-        <label for="spicy-level">辛さ / Spice Level</label>
-        <select id="spicy-level" name="spicy-level">
-          <option value="non-spicy">辛くしない / Non-spicy</option>
-          <option value="mild">小辛 / Mild</option>
-          <option value="medium">中辛 / Medium</option>
-          <option value="very-spicy">激辛 / Very spicy</option>
-        </select>
-
-        <label for="special-request">特別な希望 / Special Request</label>
-        <textarea id="special-request" name="special-request" rows="3" placeholder="例：ネギ抜き、スープ別、ライス少なめ / e.g., no scallions, soup separately, less rice"></textarea>
+    <header>
+      <div class="address">
+        台南市北區勝利路381號<br>
+        營業時間：早11:00 - 晚09:00<br>
+        每週日、一公休
       </div>
-    </section>
+      <div class="shop-name">娟姐牛肉湯</div>
+      <div class="tel">
+        TEL：06-2092625&nbsp;&nbsp;0973288870<br>
+        0973195233
+      </div>
+    </header>
 
-    <div class="filters">
-      <button class="active" onclick="filterItems('all', this)">全部 / All</button>
-      <button onclick="filterItems('popular', this)">おすすめ / Popular</button>
-      <button onclick="filterItems('small', this)">小サイズあり / Small Size</button>
+    <div class="top-options">
+      <div>
+        大辣<span class="checkbox"></span>
+        中辣<span class="checkbox"></span>
+        小辣<span class="checkbox"></span>
+      </div>
+      <div class="ps">PS：餐後付款</div>
     </div>
 
-    <section id="stir">
-      <h2>炒め物 / Stir-fried Dishes</h2>
-      <div class="grid">
-        <div class="item popular small"><div class="item-top"><div><div class="name"><span class="star">★</span>芥蘭菜と牛肉炒め</div><div class="en">Beef with Chinese kale</div><div class="sub">人気の牛肉野菜炒め / Popular beef and greens</div></div><div class="price"><span class="sizes">小 / 大</span><br>160 / 190</div></div></div>
-        <div class="item small"><div class="item-top"><div><div class="name">芥蘭菜と牛肉のあっさり炒め</div><div class="en">Light stir-fried beef with Chinese kale</div></div><div class="price">160 / 190</div></div></div>
-        <div class="item small"><div class="item-top"><div><div class="name">芥蘭菜と牛バラ煮込み炒め</div><div class="en">Beef brisket with Chinese kale</div></div><div class="price">160 / 190</div></div></div>
-        <div class="item small"><div class="item-top"><div><div class="name">キャベツと牛肉炒め</div><div class="en">Beef with cabbage</div></div><div class="price">160 / 190</div></div></div>
-        <div class="item popular small"><div class="item-top"><div><div class="name"><span class="star">★</span>牛肉のネギ炒め</div><div class="en">Stir-fried beef with scallions</div></div><div class="price">160 / 190</div></div></div>
-        <div class="item small"><div class="item-top"><div><div class="name">空芯菜と牛肉炒め</div><div class="en">Beef with water spinach</div></div><div class="price">160 / 190</div></div></div>
-        <div class="item popular small"><div class="item-top"><div><div class="name"><span class="star">★</span>芥蘭菜と牛モツ炒め</div><div class="en">Beef offal with Chinese kale</div></div><div class="price">160 / 190</div></div></div>
-        <div class="item small"><div class="item-top"><div><div class="name">牛ハチノス炒め</div><div class="en">Stir-fried beef tripe</div></div><div class="price">160 / 190</div></div></div>
-        <div class="item popular small"><div class="item-top"><div><div class="name"><span class="star">★</span>ごま油牛肉炒め</div><div class="en">Beef with sesame oil</div></div><div class="price">270 / 320</div></div></div>
-        <div class="item small"><div class="item-top"><div><div class="name">ごま油牛ハツ炒め</div><div class="en">Beef heart with sesame oil</div></div><div class="price">250 / 300</div></div></div>
-        <div class="item small"><div class="item-top"><div><div class="name">ごま油牛レバー炒め</div><div class="en">Beef liver with sesame oil</div></div><div class="price">250 / 300</div></div></div>
-        <div class="item popular small"><div class="item-top"><div><div class="name"><span class="star">★</span>にんにく牛肉炒め</div><div class="en">Garlic beef</div></div><div class="price">270 / 320</div></div></div>
-        <div class="item"><div class="item-top"><div><div class="name">季節の野菜</div><div class="en">Seasonal vegetables</div></div><div class="price">80</div></div></div>
-      </div>
-    </section>
+    <div class="content">
+      <section class="left-col">
+        <div class="section">
+          <div class="section-title">炒 類</div>
+          <table>
+            <thead>
+              <tr>
+                <th></th><th>小</th><th></th><th>大</th><th></th><th>辣</th><th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="item"><span class="star">★</span>芥藍牛肉</td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item">滑炒牛肉</td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item">芥藍牛腩</td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item">高麗牛肉</td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item"><span class="star">★</span>蔥爆牛肉</td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item">空心菜牛肉</td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item"><span class="star">★</span>芥藍牛肚</td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item">炒牛肝</td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item"><span class="star">★</span>麻油牛肉</td><td class="price">270</td><td class="box-cell"><span class="order-box"></span></td><td class="price">320</td><td class="box-cell"><span class="order-box"></span></td><td></td><td></td></tr>
+              <tr><td class="item">麻油牛心</td><td class="price">250</td><td class="box-cell"><span class="order-box"></span></td><td class="price">300</td><td class="box-cell"><span class="order-box"></span></td><td></td><td></td></tr>
+              <tr><td class="item">麻油牛肝</td><td class="price">250</td><td class="box-cell"><span class="order-box"></span></td><td class="price">300</td><td class="box-cell"><span class="order-box"></span></td><td></td><td></td></tr>
+              <tr><td class="item"><span class="star">★</span>蒜香牛肉</td><td class="price">270</td><td class="box-cell"><span class="order-box"></span></td><td class="price">320</td><td class="box-cell"><span class="order-box"></span></td><td></td><td></td></tr>
+              <tr><td class="item">季節時蔬</td><td class="price">80</td><td class="box-cell"><span class="order-box"></span></td><td></td><td></td><td></td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
 
-    <section id="soup">
-      <h2>スープ / Soups</h2>
-      <div class="grid">
-        <div class="item popular small"><div class="item-top"><div><div class="name"><span class="star">★</span>牛肉湯</div><div class="en">Tainan beef soup</div></div><div class="price">140 / 190 / 全熟</div></div></div>
-        <div class="item small"><div class="item-top"><div><div class="name">牛バラ煮込みスープ</div><div class="en">Beef brisket soup</div></div><div class="price">140 / 190</div></div></div>
-        <div class="item small"><div class="item-top"><div><div class="name">牛ハツスープ</div><div class="en">Beef heart soup</div></div><div class="price">140 / 190</div></div></div>
-        <div class="item small"><div class="item-top"><div><div class="name">牛レバースープ</div><div class="en">Beef liver soup</div></div><div class="price">140 / 190</div></div></div>
-        <div class="item small"><div class="item-top"><div><div class="name">牛モツスープ</div><div class="en">Beef offal soup</div></div><div class="price">140 / 190</div></div></div>
-        <div class="item small"><div class="item-top"><div><div class="name">ミックス牛スープ</div><div class="en">Assorted beef soup</div></div><div class="price">140 / 190</div></div></div>
-      </div>
-    </section>
+        <div class="section">
+          <div class="section-title">湯 類</div>
+          <table>
+            <thead>
+              <tr><th></th><th>小</th><th></th><th>大</th><th></th><th colspan="2">全熟大龍</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="item"><span class="star">★</span>牛肉湯</td><td class="price">140</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
+              <tr><td class="item">牛腩湯</td><td class="price">140</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item">牛心湯</td><td class="price">140</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item">牛肝湯</td><td class="price">140</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item">牛雜湯</td><td class="price">140</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item">綜合湯</td><td class="price">140</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
 
-    <section id="rice">
-      <h2>ご飯もの / Rice Dishes</h2>
-      <div class="grid">
-        <div class="item popular small"><div class="item-top"><div><div class="name"><span class="star">★</span>牛肉あんかけご飯</div><div class="en">Beef rice with thick sauce</div></div><div class="price">170 / 200</div></div></div>
-        <div class="item small"><div class="item-top"><div><div class="name">牛肉チャーハン</div><div class="en">Beef fried rice</div></div><div class="price">170 / 200</div></div></div>
-        <div class="item small"><div class="item-top"><div><div class="name">牛肉丼</div><div class="en">Beef rice bowl</div></div><div class="price">170 / 200</div></div></div>
-        <div class="item small"><div class="item-top"><div><div class="name">オイスター牛肉あんかけご飯</div><div class="en">Oyster-sauce beef rice with thick sauce</div></div><div class="price">170 / 200</div></div></div>
-        <div class="item small"><div class="item-top"><div><div class="name">オイスター牛肉チャーハン</div><div class="en">Oyster-sauce beef fried rice</div></div><div class="price">170 / 200</div></div></div>
-      </div>
-    </section>
+      <section class="right-col">
+        <div class="section">
+          <div class="section-title">飯 類</div>
+          <table>
+            <thead>
+              <tr><th></th><th>小</th><th></th><th>大</th><th></th><th>辣</th><th></th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="item">牛肉燴飯</td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
+              <tr><td class="item">牛肉飯</td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
+              <tr><td class="item">牛肉蓋飯</td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
+              <tr><td class="item">讓汁肉飯</td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
+              <tr><td class="item">讓汁炒飯</td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
+              <tr><td class="item"><span class="star">★</span>魚蛋肉飯</td><td class="price">35</td><td class="box-cell"><span class="order-box"></span></td><td class="price">45</td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item"><span class="star">★</span>肉燥飯</td><td class="price">25</td><td class="box-cell"><span class="order-box"></span></td><td class="price">35</td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item">白飯</td><td class="price">10</td><td class="box-cell"><span class="order-box"></span></td><td></td><td></td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
 
-    <section id="noodle">
-      <h2>麺類 / Noodles</h2>
-      <div class="grid">
-        <div class="item small"><div class="item-top"><div><div class="name">牛肉清湯麺</div><div class="en">Beef clear soup noodles</div><div class="sub">紅焼牛肉麺ではありません / Not braised beef noodles</div></div><div class="price">170 / 200</div></div></div>
-        <div class="item small"><div class="item-top"><div><div class="name">牛肉焼きそば</div><div class="en">Beef fried noodles</div></div><div class="price">170 / 200</div></div></div>
-        <div class="item popular small"><div class="item-top"><div><div class="name"><span class="star">★</span>牛肉ネギ焼きそば</div><div class="en">Fried noodles with scallion beef</div></div><div class="price">170 / 200</div></div></div>
-      </div>
-    </section>
+        <div class="section">
+          <div class="section-title">湯麵類</div><span class="inline-note">小/大 札咖中麵</span>
+          <table>
+            <tbody>
+              <tr><td class="item">牛肉湯麵</td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td></tr>
+            </tbody>
+          </table>
+        </div>
 
-    <section id="fish">
-      <h2>魚料理 / Fish Dishes</h2>
-      <div class="grid">
-        <div class="item small"><div class="item-top"><div><div class="name"><span class="star">★</span>龍膽ハタのスープ</div><div class="en">Giant grouper soup</div></div><div class="price">160 / 200</div></div></div>
-        <div class="item small"><div class="item-top"><div><div class="name">龍膽ハタのお粥</div><div class="en">Giant grouper congee</div></div><div class="price">170 / 210</div></div></div>
-        <div class="item small"><div class="item-top"><div><div class="name">龍膽ハタの味噌スープ</div><div class="en">Miso giant grouper soup</div></div><div class="price">160 / 200</div></div></div>
-      </div>
-    </section>
+        <div class="section">
+          <div class="section-title">炒麵類</div>
+          <table>
+            <thead>
+              <tr><th></th><th>小</th><th></th><th>大</th><th></th><th>辣</th><th></th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="item">牛肉炒麵</td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
+              <tr><td class="item"><span class="star">★</span>蔥爆牛炒麵</td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
+            </tbody>
+          </table>
+        </div>
 
-    <section id="side">
-      <h2>その他 / Sides & Drinks</h2>
-      <div class="grid">
-        <div class="item popular"><div class="item-top"><div><div class="name"><span class="star">★</span>ネギ入り卵焼き</div><div class="en">Scallion omelet</div></div><div class="price">80</div></div></div>
-        <div class="item"><div class="item-top"><div><div class="name">煮卵</div><div class="en">Braised egg</div></div><div class="price">15</div></div></div>
-        <div class="item"><div class="item-top"><div><div class="name">煮豆腐</div><div class="en">Braised tofu</div></div><div class="price">15</div></div></div>
-        <div class="item"><div class="item-top"><div><div class="name">缶ドリンク</div><div class="en">Canned drink</div></div><div class="price">20</div></div></div>
-        <div class="item"><div class="item-top"><div><div class="name">茶葉蛋</div><div class="en">Tea egg</div></div><div class="price">80</div></div></div>
-      </div>
-    </section>
+        <div class="section">
+          <div class="section-title">煎 類</div>
+          <table>
+            <thead>
+              <tr><th></th><th>小</th><th></th><th>大</th><th></th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="item"><span class="star">★</span>龍膽魚湯</td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td></tr>
+              <tr><td class="item">龍膽魚粥</td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">210</td><td class="box-cell"><span class="order-box"></span></td></tr>
+              <tr><td class="item">味噌龍膽湯</td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td></tr>
+            </tbody>
+          </table>
+        </div>
 
-    <footer>価格・提供状況は店頭でご確認ください。<br>Prices and availability may change. Please confirm with the staff.</footer>
+        <div class="section">
+          <div class="section-title">其 他</div>
+          <table>
+            <tbody>
+              <tr><td class="item"><span class="star">★</span>滷仔蛋</td><td class="price">80</td><td class="box-cell"><span class="order-box"></span></td><td class="item">鐵拔料</td><td class="price">20</td><td class="box-cell"><span class="order-box"></span></td></tr>
+              <tr><td class="item">滷蛋</td><td class="price">15</td><td class="box-cell"><span class="order-box"></span></td><td class="item">菜脯蛋</td><td class="price">80</td><td class="box-cell"><span class="order-box"></span></td></tr>
+              <tr><td class="item">滷豆腐</td><td class="price">15</td><td class="box-cell"><span class="order-box"></span></td><td></td><td></td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <footer class="footer">
+      <div class="taste-note">
+        因每個人對鹹甜口味不同，<br>
+        若需調整口味請先告知工作人員，<br>
+        謝謝您~
+      </div>
+      <div class="table-no">
+        <div class="label">內用<br>桌號</div>
+        <div class="num">5</div>
+      </div>
+    </footer>
   </main>
-
-  <div class="bottom-bar">
-    <a href="https://forms.gle/ここにGoogleフォームURL" target="_blank" rel="noopener">注文する / Order Now</a>
-  </div>
-
-  <script>
-    function filterItems(type, button){
-      document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));
-      button.classList.add('active');
-      document.querySelectorAll('.item').forEach(item=>{
-        item.style.display = (type === 'all' || item.classList.contains(type)) ? '' : 'none';
-      });
-    }
-  </script>
 </body>
 </html>
