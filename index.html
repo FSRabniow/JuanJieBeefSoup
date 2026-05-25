@@ -132,6 +132,7 @@
       color: #fff;
       display: inline-block;
       min-width: 106px;
+      max-width: 100%;
       text-align: center;
       font-size: 20px;
       font-weight: 900;
@@ -337,7 +338,7 @@
       }
 
       th {
-        font-size: clamp(13px, 3.5vw, 16px);
+        font-size: clamp(12px, 3.2vw, 16px);
       }
 
       td {
@@ -446,56 +447,56 @@
       </div>
       <div class="shop-name">娟姐牛肉湯</div>
       <div class="tel">
-        TEL：06-2092625&nbsp;&nbsp;0973288870<br>
-        0973195233
+        TEL：06-2092625<br>
+        0973288870&nbsp;&nbsp;0973195233
       </div>
     </header>
 
     <div class="top-options">
+      <div class="ps" data-zh="PS：餐後付款" data-en="Pay after your meal" data-jp="食後にお支払い">PS：餐後付款</div>
       <div>
-        大辣<span class="checkbox"></span>
-        中辣<span class="checkbox"></span>
-        小辣<span class="checkbox"></span>
+        <span data-zh="大辣" data-en="Very spicy" data-jp="大辛">大辣</span><span class="checkbox"></span>
+        <span data-zh="中辣" data-en="Medium spicy" data-jp="中辛">中辣</span><span class="checkbox"></span>
+        <span data-zh="小辣" data-en="Mild spicy" data-jp="小辛">小辣</span><span class="checkbox"></span>
       </div>
-      <div class="ps">PS：餐後付款</div>
     </div>
 
     <div class="content">
       <section class="left-col">
         <div class="section">
-          <div class="section-title" data-zh="炒 類" data-en="Stir-fried" data-jp="炒め物">炒 類</div><span class="section-subtitle" data-zh="" data-en="Stir-fried dishes" data-jp="炒め物"></span>
+          <div class="section-title" data-zh="炒 類" data-en="Stir-fried" data-jp="炒め物">炒 類</div>
           <table>
             <thead>
               <tr>
-                <th></th><th>小</th><th></th><th>大</th><th></th><th>辣</th><th></th>
+                <th></th><th data-zh="小" data-en="Small" data-jp="小">小</th><th></th><th data-zh="大" data-en="Large" data-jp="大">大</th><th></th><th data-zh="辣" data-en="Spicy" data-jp="辛さ">辣</th><th></th>
               </tr>
             </thead>
             <tbody>
-              <tr><td class="item"><span class="star">★</span><span class="item-name" data-zh="芥藍牛肉" data-en="Beef with Chinese kale" data-jp="牛肉カイラン炒め">芥藍牛肉</span></td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
-              <tr><td class="item"><span class="item-name" data-zh="清炒芥藍牛肉" data-en="Light stir-fried beef with Chinese kale" data-jp="あっさり牛肉カイラン炒め">清炒芥藍牛肉</span></td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
-              <tr><td class="item"><span class="item-name" data-zh="芥藍牛腩" data-en="Beef brisket with Chinese kale" data-jp="牛バラカイラン炒め">芥藍牛腩</span></td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
-              <tr><td class="item"><span class="item-name" data-zh="高麗菜牛肉" data-en="Beef with cabbage" data-jp="牛肉キャベツ炒め">高麗菜牛肉</span></td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
-              <tr><td class="item"><span class="star">★</span><span class="item-name" data-zh="蔥爆牛肉" data-en="Scallion stir-fried beef" data-jp="牛肉ネギ炒め">蔥爆牛肉</span></td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
-              <tr><td class="item"><span class="item-name" data-zh="空心菜牛肉" data-en="Beef with water spinach" data-jp="牛肉空心菜炒め">空心菜牛肉</span></td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
-              <tr><td class="item"><span class="star">★</span><span class="item-name" data-zh="芥藍牛雜" data-en="Mixed beef offal with Chinese kale" data-jp="牛モツカイラン炒め">芥藍牛雜</span></td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item"><span class="star">★</span><span class="item-name" data-zh="芥藍牛肉" data-en="Stir-fried beef with Chinese kale" data-jp="牛肉カイラン炒め">芥藍牛肉</span></td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="清炒芥藍牛肉" data-en="Lightly stir-fried beef with Chinese kale" data-jp="あっさり牛肉カイラン炒め">清炒芥藍牛肉</span></td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="芥藍牛腩" data-en="Stir-fried beef brisket with Chinese kale" data-jp="牛バラカイラン炒め">芥藍牛腩</span></td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="高麗菜牛肉" data-en="Stir-fried beef with cabbage" data-jp="牛肉キャベツ炒め">高麗菜牛肉</span></td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item"><span class="star">★</span><span class="item-name" data-zh="蔥爆牛肉" data-en="Stir-fried beef with scallions" data-jp="牛肉ネギ炒め">蔥爆牛肉</span></td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="空心菜牛肉" data-en="Stir-fried beef with water spinach" data-jp="牛肉空心菜炒め">空心菜牛肉</span></td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item"><span class="star">★</span><span class="item-name" data-zh="芥藍牛雜" data-en="Stir-fried mixed beef offal with Chinese kale" data-jp="牛モツカイラン炒め">芥藍牛雜</span></td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
               <tr><td class="item"><span class="item-name" data-zh="炒牛肚" data-en="Stir-fried beef tripe" data-jp="牛ハチノス炒め">炒牛肚</span></td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
-              <tr><td class="item"><span class="star">★</span><span class="item-name" data-zh="麻油牛肉" data-en="Sesame oil beef" data-jp="ごま油牛肉炒め">麻油牛肉</span></td><td class="price">270</td><td class="box-cell"><span class="order-box"></span></td><td class="price">320</td><td class="box-cell"><span class="order-box"></span></td><td></td><td></td></tr>
-              <tr><td class="item"><span class="item-name" data-zh="麻油牛心" data-en="Sesame oil beef heart" data-jp="ごま油牛ハツ炒め">麻油牛心</span></td><td class="price">250</td><td class="box-cell"><span class="order-box"></span></td><td class="price">300</td><td class="box-cell"><span class="order-box"></span></td><td></td><td></td></tr>
-              <tr><td class="item"><span class="item-name" data-zh="麻油牛肝" data-en="Sesame oil beef liver" data-jp="ごま油牛レバー炒め">麻油牛肝</span></td><td class="price">250</td><td class="box-cell"><span class="order-box"></span></td><td class="price">300</td><td class="box-cell"><span class="order-box"></span></td><td></td><td></td></tr>
-              <tr><td class="item"><span class="star">★</span><span class="item-name" data-zh="蒜香牛肉" data-en="Garlic beef" data-jp="にんにく牛肉炒め">蒜香牛肉</span></td><td class="price">270</td><td class="box-cell"><span class="order-box"></span></td><td class="price">320</td><td class="box-cell"><span class="order-box"></span></td><td></td><td></td></tr>
-              <tr><td class="item"><span class="item-name" data-zh="季節時蔬" data-en="Seasonal vegetables" data-jp="旬の野菜炒め">季節時蔬</span></td><td class="price">80</td><td class="box-cell"><span class="order-box"></span></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td class="item"><span class="star">★</span><span class="item-name" data-zh="麻油牛肉" data-en="Stir-fried beef with sesame oil" data-jp="ごま油牛肉炒め">麻油牛肉</span></td><td class="price">270</td><td class="box-cell"><span class="order-box"></span></td><td class="price">320</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="麻油牛心" data-en="Stir-fried beef heart with sesame oil" data-jp="ごま油牛ハツ炒め">麻油牛心</span></td><td class="price">250</td><td class="box-cell"><span class="order-box"></span></td><td class="price">300</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="麻油牛肝" data-en="Stir-fried beef liver with sesame oil" data-jp="ごま油牛レバー炒め">麻油牛肝</span></td><td class="price">250</td><td class="box-cell"><span class="order-box"></span></td><td class="price">300</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item"><span class="star">★</span><span class="item-name" data-zh="蒜香牛肉" data-en="Garlic stir-fried beef" data-jp="にんにく牛肉炒め">蒜香牛肉</span></td><td class="price">270</td><td class="box-cell"><span class="order-box"></span></td><td class="price">320</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="季節時蔬" data-en="Seasonal vegetables" data-jp="旬の野菜炒め">季節時蔬</span></td><td class="price">80</td><td class="box-cell"><span class="order-box"></span></td><td></td><td></td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
             </tbody>
           </table>
         </div>
 
         <div class="section">
-          <div class="section-title" data-zh="湯 類" data-en="Soups" data-jp="スープ">湯 類</div><span class="section-subtitle" data-zh="" data-en="Soups" data-jp="スープ"></span>
+          <div class="section-title" data-zh="湯 類" data-en="Soups" data-jp="スープ">湯 類</div>
           <table>
             <thead>
-              <tr><th></th><th>小</th><th></th><th>大</th><th></th><th colspan="2">全熟大龍</th></tr>
+              <tr><th></th><th data-zh="小" data-en="Small" data-jp="小">小</th><th></th><th data-zh="大" data-en="Large" data-jp="大">大</th><th></th><th colspan="2" data-zh="全熟" data-en="Well-done" data-jp="全熟">全熟</th></tr>
             </thead>
             <tbody>
-              <tr><td class="item"><span class="star">★</span><span class="item-name" data-zh="牛肉湯" data-en="Beef soup" data-jp="牛肉湯">牛肉湯</span></td><td class="price">140</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
+              <tr><td class="item"><span class="star">★</span><span class="item-name" data-zh="牛肉湯" data-en="Fresh beef soup" data-jp="牛肉湯">牛肉湯</span></td><td class="price">140</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
               <tr><td class="item"><span class="item-name" data-zh="牛腩湯" data-en="Beef brisket soup" data-jp="牛バラ湯">牛腩湯</span></td><td class="price">140</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
               <tr><td class="item"><span class="item-name" data-zh="牛心湯" data-en="Beef heart soup" data-jp="牛ハツ湯">牛心湯</span></td><td class="price">140</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
               <tr><td class="item"><span class="item-name" data-zh="牛肝湯" data-en="Beef liver soup" data-jp="牛レバー湯">牛肝湯</span></td><td class="price">140</td><td class="box-cell"><span class="order-box"></span></td><td class="price">190</td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
@@ -508,38 +509,41 @@
 
       <section class="right-col">
         <div class="section">
-          <div class="section-title" data-zh="飯 類" data-en="Rice" data-jp="ご飯もの">飯 類</div><span class="section-subtitle" data-zh="" data-en="Rice dishes" data-jp="ご飯もの"></span>
+          <div class="section-title" data-zh="飯 類" data-en="Rice" data-jp="ご飯もの">飯 類</div>
           <table>
             <thead>
-              <tr><th></th><th>小</th><th></th><th>大</th><th></th><th>辣</th><th></th></tr>
+              <tr><th></th><th data-zh="小" data-en="Small" data-jp="小">小</th><th></th><th data-zh="大" data-en="Large" data-jp="大">大</th><th></th><th data-zh="辣" data-en="Spicy" data-jp="辛さ">辣</th><th></th></tr>
             </thead>
             <tbody>
-              <tr><td class="item"><span class="item-name" data-zh="牛肉燴飯" data-en="Beef rice with gravy" data-jp="牛肉あんかけご飯">牛肉燴飯</span></td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="牛肉燴飯" data-en="Beef over rice with gravy" data-jp="牛肉あんかけご飯">牛肉燴飯</span></td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
               <tr><td class="item"><span class="item-name" data-zh="牛肉炒飯" data-en="Beef fried rice" data-jp="牛肉チャーハン">牛肉炒飯</span></td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
               <tr><td class="item"><span class="item-name" data-zh="牛肉蓋飯" data-en="Beef rice bowl" data-jp="牛丼風ご飯">牛肉蓋飯</span></td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
-              <tr><td class="item"><span class="item-name" data-zh="蠔油牛肉燴飯" data-en="Oyster sauce beef rice" data-jp="牛肉オイスターソースあんかけご飯">蠔油牛肉燴飯</span></td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
-              <tr><td class="item"><span class="item-name" data-zh="蠔油牛肉炒飯" data-en="Oyster sauce beef fried rice" data-jp="牛肉オイスター炒飯">蠔油牛肉炒飯</span></td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
-              <tr><td class="item"><span class="star">★</span><span class="item-name" data-zh="魚鬆肉燥飯" data-en="Minced pork rice with fish floss" data-jp="肉そぼろご飯＋魚フレーク">魚鬆肉燥飯</span></td><td class="price">35</td><td class="box-cell"><span class="order-box"></span></td><td class="price">45</td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
-              <tr><td class="item"><span class="star">★</span><span class="item-name" data-zh="肉燥飯" data-en="Braised minced pork rice" data-jp="台湾ルーロー飯">肉燥飯</span></td><td class="price">25</td><td class="box-cell"><span class="order-box"></span></td><td class="price">35</td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="蠔油牛肉燴飯" data-en="Oyster sauce beef over rice with gravy" data-jp="牛肉オイスターソースあんかけご飯">蠔油牛肉燴飯</span></td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="蠔油牛肉炒飯" data-en="Oyster sauce beef fried rice" data-jp="牛肉オイスターチャーハン">蠔油牛肉炒飯</span></td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
+              <tr><td class="item"><span class="star">★</span><span class="item-name" data-zh="魚鬆肉燥飯" data-en="Minced pork rice with fish floss" data-jp="魚そぼろのせ肉燥飯">魚鬆肉燥飯</span></td><td class="price">35</td><td class="box-cell"><span class="order-box"></span></td><td class="price">45</td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
+              <tr><td class="item"><span class="star">★</span><span class="item-name" data-zh="肉燥飯" data-en="Rouzao rice" data-jp="肉燥飯">肉燥飯</span></td><td class="price">25</td><td class="box-cell"><span class="order-box"></span></td><td class="price">35</td><td class="box-cell"><span class="order-box"></span></td><td></td></tr>
               <tr><td class="item"><span class="item-name" data-zh="白飯" data-en="Steamed rice" data-jp="白ご飯">白飯</span></td><td class="price">10</td><td class="box-cell"><span class="order-box"></span></td><td></td><td></td><td></td></tr>
             </tbody>
           </table>
         </div>
 
         <div class="section">
-          <div class="section-title" data-zh="湯麵" data-en="Soup noodles" data-jp="スープ麺">湯麵</div><span class="inline-note" data-zh="有鮮肉／不是紅燒牛肉麵" data-en="Clear soup, not braised beef noodles" data-jp="あっさり系・紅焼牛肉麺ではありません">有鮮肉／不是紅燒牛肉麵</span>
+          <div class="section-title" data-zh="湯麵（有鮮肉）" data-en="Soup Noodles" data-jp="スープ麺">湯麵（有鮮肉）</div><span class="inline-note" data-zh="不是紅燒牛肉麵" data-en="Not braised beef noodles" data-jp="紅焼牛肉麺ではありません">不是紅燒牛肉麵</span>
           <table>
+            <thead>
+              <tr><th></th><th data-zh="小" data-en="Small" data-jp="小">小</th><th></th><th data-zh="大" data-en="Large" data-jp="大">大</th><th></th></tr>
+            </thead>
             <tbody>
-              <tr><td class="item"><span class="item-name" data-zh="牛肉清湯麵" data-en="Clear beef soup noodles" data-jp="あっさり牛肉スープ麺">牛肉清湯麵</span></td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="牛肉清湯麵" data-en="Fresh beef noodles in clear soup" data-jp="あっさり牛肉スープ麺">牛肉清湯麵</span></td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td></tr>
             </tbody>
           </table>
         </div>
 
         <div class="section">
-          <div class="section-title" data-zh="炒麵" data-en="Fried noodles" data-jp="焼きそば">炒麵</div><span class="section-subtitle" data-zh="有鮮肉" data-en="Fried noodles" data-jp="焼きそば"></span>
+          <div class="section-title" data-zh="炒麵（有鮮肉）" data-en="Fried Noodles" data-jp="焼きそば">炒麵（有鮮肉）</div>
           <table>
             <thead>
-              <tr><th></th><th>小</th><th></th><th>大</th><th></th><th>辣</th><th></th></tr>
+              <tr><th></th><th data-zh="小" data-en="Small" data-jp="小">小</th><th></th><th data-zh="大" data-en="Large" data-jp="大">大</th><th></th><th data-zh="辣" data-en="Spicy" data-jp="辛さ">辣</th><th></th></tr>
             </thead>
             <tbody>
               <tr><td class="item"><span class="item-name" data-zh="牛肉炒麵" data-en="Beef fried noodles" data-jp="牛肉焼きそば">牛肉炒麵</span></td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td><td class="box-cell"><span class="order-box"></span></td></tr>
@@ -549,25 +553,25 @@
         </div>
 
         <div class="section">
-          <div class="section-title" data-zh="魚 類" data-en="Fish" data-jp="魚料理">魚 類</div><span class="section-subtitle" data-zh="" data-en="Fish dishes" data-jp="魚料理"></span>
+          <div class="section-title" data-zh="魚 類" data-en="Fish" data-jp="魚料理">魚 類</div>
           <table>
             <thead>
-              <tr><th></th><th>小</th><th></th><th>大</th><th></th></tr>
+              <tr><th></th><th data-zh="小" data-en="Small" data-jp="小">小</th><th></th><th data-zh="大" data-en="Large" data-jp="大">大</th><th></th></tr>
             </thead>
             <tbody>
-              <tr><td class="item"><span class="star">★</span><span class="item-name" data-zh="龍膽魚湯" data-en="Grouper fish soup" data-jp="ハタスープ">龍膽魚湯</span></td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td></tr>
-              <tr><td class="item"><span class="item-name" data-zh="龍膽魚粥" data-en="Grouper fish porridge" data-jp="ハタのお粥">龍膽魚粥</span></td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">210</td><td class="box-cell"><span class="order-box"></span></td></tr>
-              <tr><td class="item"><span class="item-name" data-zh="味噌龍膽魚湯" data-en="Miso grouper fish soup" data-jp="ハタの味噌スープ">味噌龍膽魚湯</span></td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td></tr>
+              <tr><td class="item"><span class="star">★</span><span class="item-name" data-zh="龍膽魚湯" data-en="Grouper soup" data-jp="ハタスープ">龍膽魚湯</span></td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="龍膽魚粥" data-en="Grouper congee" data-jp="ハタのお粥">龍膽魚粥</span></td><td class="price">170</td><td class="box-cell"><span class="order-box"></span></td><td class="price">210</td><td class="box-cell"><span class="order-box"></span></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="味噌龍膽魚湯" data-en="Miso grouper soup" data-jp="ハタの味噌スープ">味噌龍膽魚湯</span></td><td class="price">160</td><td class="box-cell"><span class="order-box"></span></td><td class="price">200</td><td class="box-cell"><span class="order-box"></span></td></tr>
             </tbody>
           </table>
         </div>
 
         <div class="section">
-          <div class="section-title" data-zh="其 他" data-en="Others" data-jp="その他">其 他</div><span class="section-subtitle" data-zh="" data-en="Others" data-jp="その他"></span>
+          <div class="section-title" data-zh="其 他" data-en="Others" data-jp="その他">其 他</div>
           <table>
             <tbody>
               <tr><td class="item"><span class="star">★</span><span class="item-name" data-zh="蔥仔蛋" data-en="Scallion omelet" data-jp="ネギ入り卵焼き">蔥仔蛋</span></td><td class="price">80</td><td class="box-cell"><span class="order-box"></span></td><td class="item"><span class="item-name" data-zh="罐裝飲料" data-en="Canned drinks" data-jp="缶ジュース">罐裝飲料</span></td><td class="price">20</td><td class="box-cell"><span class="order-box"></span></td></tr>
-              <tr><td class="item"><span class="item-name" data-zh="滷蛋" data-en="Braised egg" data-jp="台湾風煮卵">滷蛋</span></td><td class="price">15</td><td class="box-cell"><span class="order-box"></span></td><td class="item"><span class="item-name" data-zh="菜脯蛋" data-en="Omelet with preserved radish" data-jp="切り干し大根入り卵焼き">菜脯蛋</span></td><td class="price">80</td><td class="box-cell"><span class="order-box"></span></td></tr>
+              <tr><td class="item"><span class="item-name" data-zh="滷蛋" data-en="Braised egg" data-jp="台湾風煮卵">滷蛋</span></td><td class="price">15</td><td class="box-cell"><span class="order-box"></span></td><td class="item"><span class="item-name" data-zh="菜脯蛋" data-en="Preserved radish omelet" data-jp="切り干し大根入り卵焼き">菜脯蛋</span></td><td class="price">80</td><td class="box-cell"><span class="order-box"></span></td></tr>
               <tr><td class="item"><span class="item-name" data-zh="滷豆腐" data-en="Braised tofu" data-jp="台湾風煮込み豆腐">滷豆腐</span></td><td class="price">15</td><td class="box-cell"><span class="order-box"></span></td><td></td><td></td><td></td></tr>
             </tbody>
           </table>
